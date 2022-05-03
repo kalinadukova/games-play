@@ -2,9 +2,7 @@ import * as gameService from '../services/gameService';
 import { useState, useEffect } from 'react';
 import LatestGameCard from './LatestGameCard';
 
-const WelcomeWorld = ({
-    navigationChangeHandler
-}) => {
+const WelcomeWorld = () => {
     const [games, setGames] = useState([]);
 
     useEffect(() => {
@@ -25,7 +23,10 @@ const WelcomeWorld = ({
                 <h1>Latest Games</h1>
 
                 {games.length > 0
-                    ? games.map(game => <LatestGameCard key={game._id} game={game} navigationChangeHandler={navigationChangeHandler} />)
+                    ? games.map(game => <LatestGameCard
+                        key={game._id}
+                        game={game}
+                    />)
                     : <p className="no-articles">No games yet</p>}
 
 

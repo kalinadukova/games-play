@@ -22,6 +22,7 @@ function App() {
           <Route path='/create-game' exact component={CreateGame} />
           <Route path='/login' exact component={Login} />
           <Route path='/register' exact component={Register} />
+          <Route path='/games/:gameId' exact component={GameDetails} />
           <Route component={ErrorPage} />
         </Switch>
       </main>
